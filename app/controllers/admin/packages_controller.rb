@@ -15,5 +15,12 @@ module Admin
 
     # See https://administrate-docs.herokuapp.com/customizing_controller_actions
     # for more information
+
+    private
+
+      def records_per_page
+        params[:per_page] || 2
+      end
+
   end
 end
