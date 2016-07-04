@@ -11,6 +11,7 @@ class PackageDashboard < Administrate::BaseDashboard
     id: Field::Number,
     name: Field::String,
     description: Field::Text,
+    country: Field::BelongsTo,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -24,6 +25,7 @@ class PackageDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :description,
+    :country,
     :created_at,
   ].freeze
 
@@ -33,6 +35,7 @@ class PackageDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :description,
+    :country,
     :created_at,
     :updated_at,
   ].freeze
@@ -43,6 +46,7 @@ class PackageDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :name,
     :description,
+    :country
   ].freeze
 
   # Overwrite this method to customize how packages are displayed
