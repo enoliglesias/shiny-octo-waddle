@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :administrators
   namespace :admin do
     resources :packages
+    resources :countries
 
     root to: "packages#index"
   end
