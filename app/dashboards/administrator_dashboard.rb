@@ -21,6 +21,8 @@ class AdministratorDashboard < Administrate::BaseDashboard
     last_sign_in_ip: Field::String.with_options(searchable: false),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    password: Field::String,
+    password_confirmation: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -31,8 +33,8 @@ class AdministratorDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :email,
-    :encrypted_password,
-    :reset_password_token,
+    :last_sign_in_at,
+    :sign_in_count
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -57,7 +59,14 @@ class AdministratorDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :email
+    :email,
+    :sign_in_count,
+    :password,
+    :password_confirmation,
+    :current_sign_in_at,
+    :last_sign_in_at,
+    :current_sign_in_ip,
+    :last_sign_in_ip,
   ].freeze
 
   # Overwrite this method to customize how administrators are displayed
