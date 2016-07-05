@@ -21,6 +21,8 @@ class UserDashboard < Administrate::BaseDashboard
     last_sign_in_ip: Field::String.with_options(searchable: false),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    password_confirmation: Field::String,
+    password: Field::String,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -31,8 +33,8 @@ class UserDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :email,
-    :encrypted_password,
-    :reset_password_token,
+    :last_sign_in_at,
+    :sign_in_count
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -58,11 +60,9 @@ class UserDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
     :sign_in_count,
+    :password,
+    :password_confirmation,
     :current_sign_in_at,
     :last_sign_in_at,
     :current_sign_in_ip,
