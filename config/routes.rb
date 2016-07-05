@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :packages
     resources :countries
+    resources :administrators
 
     root to: "packages#index"
   end
