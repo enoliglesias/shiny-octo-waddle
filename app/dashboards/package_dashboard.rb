@@ -10,7 +10,7 @@ class PackageDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
-    description: Field::Text,
+    description: Field::Ckeditor,
     country: Field::BelongsTo,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
