@@ -12,6 +12,7 @@ class CountryDashboard < Administrate::BaseDashboard
     name: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    packages: Field::HasMany
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -33,6 +34,7 @@ class CountryDashboard < Administrate::BaseDashboard
     :name,
     :created_at,
     :updated_at,
+    :packages
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -40,6 +42,7 @@ class CountryDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :name,
+    :packages
   ].freeze
 
   # Overwrite this method to customize how countries are displayed
