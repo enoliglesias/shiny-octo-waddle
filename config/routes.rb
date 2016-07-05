@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :packages
     resources :countries
     resources :administrators
+    resources :users
 
     root to: "packages#index"
   end
