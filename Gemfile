@@ -6,6 +6,7 @@ ruby '2.3.0'
 gem 'rails', '4.2.6'
 
 gem "administrate"
+gem "administrate-field-ckeditor", "~> 0.0.2"
 
 gem 'pg'
 # Use SCSS for stylesheets
